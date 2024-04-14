@@ -60,7 +60,7 @@ impl NotificationService {
             .join().unwrap();
     }
 
-    #[tokio: main]
+    #[tokio::main]
     async fn unsubscribe_request(product_type: String) -> Result<SubscriberRequest> {
         let product_type_upper: String = product_type.to_uppercase();
         let product_type_str: &str = product_type_upper.as_str();
@@ -73,7 +73,7 @@ impl NotificationService {
             .header("Content-Type", "application/json")
             .header("Accept", "application/json")
             .send().await;
-        log::warn_!("Sent unsubscribe request to: {}", reguest_url);
+        log::warn_!("Sent unsubscribe request to: {}", request_url);
 
         return match request {
             Ok(f) => match f.json::<SubscriberRequest>().await {
