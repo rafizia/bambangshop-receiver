@@ -85,5 +85,13 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. Menurut saya, RwLock<> cocok untuk digunakan pada skenario di mana struktur data lebih sering diakses untuk membaca daripada untuk menulis. Hal ini memaksimalkan konkurensi dan menjadikannya pilihan yang lebih baik daripada Mutex<> yang lebih cocok untuk skenario di mana konkurensi operasi baca lebih tinggi daripada operasi tulis.
+
+2. Di Rust, mutabilitas static variable berbeda dari bahasa lain seperti Java karena Rust sangat menekankan thread-safety. Alasan untuk tidak mengizinkan mutasi static variable secara langsung bertujuan untuk mencegah potensi masalah terkait thread safety, memory safety, dan data race conditions.
 
 #### Reflection Subscriber-2
+1. Saya belum mempelajari materi diluar tutorial ini seperti file `src/lib.rs`. Alasannya adalah karena saya fokus untuk mempelajari dan mencoba memahami materi yang terdapat di tutorial ini terlebih dahulu. Namun, menurut saya dengan mempelajari materi tambahan tersebut dapat memberikan wawasan tentang software architecture dan design pattern yang lebih luas.
+
+2. Menurut saya Observer Pattern memungkinkan scaling yang lebih mudah dalam hal penambahan lebih banyak subscriber. Namun, scaling dengan menambahkan lebih banyak instance aplikasi Utama memerlukan perencanaan yang cermat mengenai arsitektur sistem untuk mencegah masalah seperti inkonsistensi data dan duplikasi notifikasi.
+
+3. Untuk saat ini saya belum mencoba untuk membuat Test atau menyempurnakan dokumentasi pada Postman collection.
